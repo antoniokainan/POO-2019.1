@@ -1,9 +1,9 @@
 # POO-2019.1
 
-## 01 - Carro (Python)
-    Fiz o codigo inteiro sozinho e com as aulas gravadas.Fiz ele completo com todas as funções e etc.
-    Nessa atividaade não tive nenhuma outra dificuldade além dos conceitos de POO, eu aprendi a fazer parte de interação com o usuário, sei usar funções str, init e etc.
-    Levei em torno de 4h pra fazer, pois precisei relembrar algumas coisas do python e alguns conceitos que vi semestre passado em POO.
+# 01 - Carro (Python)
+ Fiz o codigo inteiro sozinho e com as aulas gravadas.Fiz ele completo com todas as funções e etc.
+ Nessa atividaade não tive nenhuma outra dificuldade além dos conceitos de POO, eu aprendi a fazer parte de interação com o usuário, sei usar funções str, init e etc.
+ Levei em torno de 4h pra fazer, pois precisei relembrar algumas coisas do python e alguns conceitos que vi semestre passado em POO.
 
 ## 02 - Calculadora (Python)
     Fiz o codigo inteiro sozinho, apenas assitindo a aula gravada para rever pequenos detalhes. Minha unica dificuldade foram algumas coisas da linguagem que eu não lembrava.
