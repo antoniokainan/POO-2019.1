@@ -22,3 +22,7 @@
  Fiz uma parte do codigo sozinho achando que estava certo, mas quando cheguei na aula vi que estava errado e refiz ele completo na aula mesmo.
  Embora eu tenha começado a me acostumar com a linguagem, boa parte das coisas eu ainda acho dificil de fazer.
  Levei em torno de 5h pra fazer.
+ 
+ ## 07 - Agiota
+  Não consegui fazer o codigo inteiro, e aparte que eu fiz foi assistindo a aula gravada, mas acho que estou com dificuldade por que não estou entendo muito bem a teoria. Minha principal dificuldade é na hora de criar os métodos.
+  Levei em torno de 3h para fazer, pois vi a aula algumas vezes para ir fazendo passo a passo e tentando entender.
