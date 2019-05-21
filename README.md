@@ -26,3 +26,6 @@
  ## 07 - Agiota
   Não consegui fazer o codigo inteiro, e aparte que eu fiz foi assistindo a aula gravada, mas acho que estou com dificuldade por que não estou entendo muito bem a teoria. Minha principal dificuldade é na hora de criar os métodos.
   Levei em torno de 3h para fazer, pois vi a aula algumas vezes para ir fazendo passo a passo e tentando entender.
+
+##Avaliação Agência
+Não lembrei da parte que o tempo era livre, fiz nas 4h, está bem incompleto, eu achava que sabia fazer mas não consegui.
