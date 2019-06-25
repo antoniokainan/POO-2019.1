@@ -1,55 +1,107 @@
 import java.util.ArrayList;
+import java.util.Map;
 import java.util.Scanner;
+import java.util.TreeMap;
+
+abstract class Conta{
+    int id;
+    double saldo;
+    String clienteId;
+    String tipo;
+
+    Conta(int id, String clienteId){
+        this.id = id;
+        this.clienteId = clienteId;
+        this.saldo = 0;
+        this.tipo = "";
+    }
+
+    public String toString() {
+        return "" + id + ":" + clienteId + ":" + saldo + ":" + tipo;
+    }
+}
+
+class ContaCorrente extends Conta{
+    public ContaCorrente(int id, String clienteId){
+        super(id, clienteId);
+        this.tipo = "CC";
+    }
+}
+
+class ContaPoupanca extends Conta{
+    public ContaPoupanca(int id, String clienteId){
+        super(id, clienteId);
+        this.tipo = "CP";
+    }
+}
 
 class Cliente{
-    String idCliente;
-    int cp;
-    int cc;
+    String id;
+    ArrayList<Conta>contas;
 
-    public Cliente(String idCliente, int cp, int cc) {
-        this.idCliente = idCliente;
-        this.cp = 0;
-        this.cc = 0;
+    public Cliente(String id){
+        this.id = id;
+        contas = new ArrayList<Conta>();
+    }
+    void addConta(Conta conta){
+        contas.add(conta);
     }
 
     @Override
     public String toString() {
-        return idCliente;
+        return id;
     }
 }
 
-class Banco{
-    ArrayList<Cliente> clientes;
+class Agencia{
+    Map<String,Cliente> clientes;
+    Map<Integer,Conta> contas;
+    int nextId;
 
-    void cadastrar(Cliente cliente){
-        clientes.add(cliente);
+    public Agencia(){
+        clientes = new TreeMap<String, Cliente>();
+        contas = new TreeMap<Integer, Conta>();
+        int nextId = 0;
+    }
+
+    public void addCliente(String id){
+        if (clientes.get(id) == null) {
+            Conta poupanca = new ContaPoupanca(nextId++, id);
+            Conta corrente = new ContaCorrente(nextId++, id);
+            Cliente cliente = new Cliente(id);
+            cliente.addConta(poupanca);
+            cliente.addConta(corrente);
+            clientes.put(id, cliente);
+            contas.put(poupanca.id, poupanca);
+            contas.put(corrente.id, corrente);
+        }
     }
 
     @Override
     public String toString() {
         String saida = " ";
-        for (Cliente cliente : clientes) {
-            saida += cliente + "\n";
-        }
+        for (Conta conta : contas.values())
+            saida += conta + "\n";
         return saida;
     }
 }
 
 public class Controller {
     public static void main(String[] args) {
-        Banco banco = new Banco();
+
         Scanner scanner = new Scanner(System.in);
+        Agencia agencia = new Agencia();
 
         while (true) {
             String line = scanner.nextLine();
-            String[] ui = line.split("");
+            String[] ui = line.split(" ");
             if (ui[0].equals("end")){
                 break;
-            }else if (ui[0].equals("show")){
-                System.out.println(banco.clientes);
             }else if (ui[0].equals("addCli")){
-                String idCliente = ui[1];
-                banco.cadastrar(new Cliente(idCliente,0 ,0));
+                agencia.addCliente(ui[1]);
+            }else if (ui[0].equals("show")){
+                System.out.println(agencia);
+
             }
         }
     }
